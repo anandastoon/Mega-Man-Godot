@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://skrip/Gimmick/Laser Bias.gd" type="Script" id=1]
+[ext_resource path="res://sprite/Gimmick/laserport.png" type="Texture" id=2]
+[ext_resource path="res://sprite/Gimmick/laserport2.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[node name="Laser Bias" type="StaticBody2D" index="0"]
+
+input_pickable = true
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+script = ExtResource( 1 )
+indeks_bias = "atas"
+indeks_stop = 0
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+texture = ExtResource( 2 )
+vframes = 2
+hframes = 2
+_sections_unfolded = [ "Animation" ]
+
+[node name="Sprite2" type="Sprite" parent="." index="1"]
+
+visible = false
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="." index="3"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+
+

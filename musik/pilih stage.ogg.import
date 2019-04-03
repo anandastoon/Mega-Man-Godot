@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pilih stage.ogg-4662708ee2c9d9033712f162f96c980a.oggstr"
+
+[deps]
+
+source_file="res://musik/pilih stage.ogg"
+dest_files=[ "res://.import/pilih stage.ogg-4662708ee2c9d9033712f162f96c980a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

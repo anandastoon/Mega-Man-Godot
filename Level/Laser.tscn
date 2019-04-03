@@ -1,0 +1,513 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://skrip/Level.gd" type="Script" id=1]
+[ext_resource path="res://addons/bg1.jpg" type="Texture" id=2]
+[ext_resource path="res://sprite/hitam.png" type="Texture" id=3]
+[ext_resource path="res://laserbattle_1.tmx" type="PackedScene" id=4]
+[ext_resource path="res://laserbattle_2.tmx" type="PackedScene" id=5]
+[ext_resource path="res://laserbattle.tmx" type="PackedScene" id=6]
+[ext_resource path="res://objek/Gimmick/Konveyor.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objek/Gimmick/Konveyor Coll.tscn" type="PackedScene" id=8]
+[ext_resource path="res://skrip/solid_hitam2.gd" type="Script" id=9]
+[ext_resource path="res://objek/Es.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objek/Air Kompleks 1.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objek/Gimmick/Laser Bias.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objek/Mega Man/Megaman.tscn" type="PackedScene" id=13]
+[ext_resource path="res://objek/Mega Man/Darah Meter.tscn" type="PackedScene" id=14]
+[ext_resource path="res://musik/quickman.ogg" type="AudioStream" id=15]
+[ext_resource path="res://objek/Kematian.tscn" type="PackedScene" id=16]
+[ext_resource path="res://objek/Pemuncul Musuh.tscn" type="PackedScene" id=17]
+[ext_resource path="res://objek/Tangga.tscn" type="PackedScene" id=18]
+[ext_resource path="res://objek/Tangga Atas.tscn" type="PackedScene" id=19]
+[ext_resource path="res://objek/Gimmick/Tembyut.tscn" type="PackedScene" id=20]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 42.2957 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 128 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2( 1, 1 )
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 1, 1 )
+scroll_offset = Vector2( 128, 128 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 512, 512 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 512 )
+
+[node name="solid_hitam" type="Sprite" parent="."]
+position = Vector2( 768, 240 )
+scale = Vector2( 16, 32.9375 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="laserbattle_1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 768, 256 )
+
+[node name="laserbattle_2" parent="." instance=ExtResource( 5 )]
+position = Vector2( 768, 256 )
+
+[node name="laserbattle" parent="." instance=ExtResource( 6 )]
+
+[node name="KonveyorGrup" type="Node2D" parent="."]
+
+[node name="Konveyor" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1032, 2104 )
+
+[node name="Konveyor2" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1048, 2104 )
+
+[node name="Konveyor3" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1064, 2104 )
+
+[node name="Konveyor4" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1080, 2104 )
+
+[node name="Konveyor5" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1096, 2104 )
+
+[node name="Konveyor6" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1112, 2104 )
+
+[node name="Konveyor7" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1128, 2104 )
+
+[node name="Konveyor15" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1144, 2104 )
+
+[node name="Konveyor16" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1160, 2104 )
+
+[node name="Konveyor17" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1176, 2104 )
+
+[node name="Konveyor18" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1192, 2104 )
+
+[node name="Konveyor19" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1208, 2104 )
+
+[node name="Konveyor8" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1272, 2152 )
+mode = "kiri"
+
+[node name="Konveyor9" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1256, 2152 )
+mode = "kiri"
+
+[node name="Konveyor24" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1176, 2216 )
+mode = "kiri"
+
+[node name="Konveyor10" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1240, 2152 )
+mode = "kiri"
+
+[node name="Konveyor25" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1160, 2216 )
+mode = "kiri"
+
+[node name="Konveyor11" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1224, 2152 )
+mode = "kiri"
+
+[node name="Konveyor26" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1144, 2216 )
+mode = "kiri"
+
+[node name="Konveyor34" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1192, 2216 )
+mode = "kiri"
+
+[node name="Konveyor12" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1208, 2152 )
+mode = "kiri"
+
+[node name="Konveyor27" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1128, 2216 )
+mode = "kiri"
+
+[node name="Konveyor13" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1192, 2152 )
+mode = "kiri"
+
+[node name="Konveyor28" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1112, 2216 )
+mode = "kiri"
+
+[node name="Konveyor14" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1176, 2152 )
+mode = "kiri"
+
+[node name="Konveyor29" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1096, 2216 )
+mode = "kiri"
+
+[node name="Konveyor20" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1160, 2152 )
+mode = "kiri"
+
+[node name="Konveyor30" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1080, 2216 )
+mode = "kiri"
+
+[node name="Konveyor21" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1144, 2152 )
+mode = "kiri"
+
+[node name="Konveyor31" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1064, 2216 )
+mode = "kiri"
+
+[node name="Konveyor22" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1128, 2152 )
+mode = "kiri"
+
+[node name="Konveyor32" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1048, 2216 )
+mode = "kiri"
+
+[node name="Konveyor23" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1112, 2152 )
+mode = "kiri"
+
+[node name="Konveyor33" parent="KonveyorGrup" instance=ExtResource( 7 )]
+position = Vector2( 1032, 2216 )
+mode = "kiri"
+
+[node name="Konveyor Coll" parent="KonveyorGrup" instance=ExtResource( 8 )]
+position = Vector2( 1120, 2104 )
+scale = Vector2( 3, 0.25 )
+
+[node name="Konveyor Coll2" parent="KonveyorGrup" instance=ExtResource( 8 )]
+position = Vector2( 1192, 2152 )
+scale = Vector2( 2.75, 0.25 )
+mode = "Kiri"
+
+[node name="Konveyor Coll3" parent="KonveyorGrup" instance=ExtResource( 8 )]
+position = Vector2( 1112, 2216 )
+scale = Vector2( 2.75, 0.25 )
+mode = "Kiri"
+
+[node name="StakLaser" type="Node2D" parent="."]
+
+[node name="solid_hitam2" type="Sprite" parent="."]
+position = Vector2( 768, 240 )
+scale = Vector2( 16, 33 )
+texture = ExtResource( 3 )
+centered = false
+script = ExtResource( 9 )
+
+[node name="StakMusuh" type="Node2D" parent="."]
+
+[node name="Es" parent="." instance=ExtResource( 10 )]
+position = Vector2( 752, 1172 )
+scale = Vector2( 2, 0.375 )
+
+[node name="Es5" parent="." instance=ExtResource( 10 )]
+position = Vector2( 872, 978 )
+scale = Vector2( 2.75, 0.3125 )
+
+[node name="Es2" parent="." instance=ExtResource( 10 )]
+position = Vector2( 960, 1204 )
+scale = Vector2( 1.5, 0.375 )
+
+[node name="Es3" parent="." instance=ExtResource( 10 )]
+position = Vector2( 880, 1184 )
+scale = Vector2( 0.500001, 0.25 )
+
+[node name="Es4" parent="." instance=ExtResource( 10 )]
+position = Vector2( 848, 1140 )
+scale = Vector2( 0.500001, 0.375 )
+
+[node name="Air" parent="." instance=ExtResource( 11 )]
+position = Vector2( 360, 1352 )
+
+[node name="Laser Bias" parent="." instance=ExtResource( 12 )]
+position = Vector2( 40, 840 )
+indeks_bias = "bawah"
+indeks_stop = 13
+
+[node name="Laser Bias3" parent="." instance=ExtResource( 12 )]
+position = Vector2( 648, 712 )
+indeks_stop = 1
+
+[node name="Laser Bias5" parent="." instance=ExtResource( 12 )]
+position = Vector2( 984, 872 )
+indeks_stop = 3
+
+[node name="Laser Bias6" parent="." instance=ExtResource( 12 )]
+position = Vector2( 984, 824 )
+indeks_bias = "kiri"
+indeks_stop = 7
+
+[node name="Laser Bias7" parent="." instance=ExtResource( 12 )]
+position = Vector2( 888, 824 )
+indeks_bias = "bawah"
+indeks_stop = 9
+
+[node name="Laser Bias8" parent="." instance=ExtResource( 12 )]
+position = Vector2( 888, 904 )
+indeks_bias = "kiri"
+indeks_stop = 1
+
+[node name="Laser Bias9" parent="." instance=ExtResource( 12 )]
+position = Vector2( 792, 904 )
+indeks_stop = 1
+
+[node name="Laser Bias13" parent="." instance=ExtResource( 12 )]
+position = Vector2( 568, 1480 )
+indeks_bias = "kanan"
+indeks_stop = 14
+
+[node name="Laser Bias14" parent="." instance=ExtResource( 12 )]
+position = Vector2( 728, 1480 )
+indeks_stop = 1
+
+[node name="Laser Bias10" parent="." instance=ExtResource( 12 )]
+position = Vector2( 792, 792 )
+indeks_bias = "kanan"
+indeks_stop = 9
+
+[node name="Laser Bias11" parent="." instance=ExtResource( 12 )]
+position = Vector2( 920, 792 )
+indeks_bias = "bawah"
+indeks_stop = 13
+
+[node name="Laser Bias12" parent="." instance=ExtResource( 12 )]
+position = Vector2( 840, 856 )
+indeks_bias = "kiri"
+
+[node name="Laser Bias4" parent="." instance=ExtResource( 12 )]
+position = Vector2( 648, 392 )
+indeks_bias = "kanan"
+indeks_stop = 15
+
+[node name="Laser Bias2" parent="." instance=ExtResource( 12 )]
+position = Vector2( 40, 968 )
+indeks_bias = "kanan"
+indeks_stop = 9
+
+[node name="Megaman" parent="." instance=ExtResource( 13 )]
+position = Vector2( 72, 128 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128, 128 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Darah Meter" parent="Camera2D" instance=ExtResource( 14 )]
+position = Vector2( -104, -88 )
+
+[node name="Label" type="Label" parent="Camera2D"]
+visible = false
+margin_left = 64.0
+margin_top = -112.0
+margin_right = 104.0
+margin_bottom = -98.0
+text = "Layar:"
+
+[node name="AreaKamera" type="Area2D" parent="Camera2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/AreaKamera"]
+scale = Vector2( 1, 3.02632 )
+shape = SubResource( 1 )
+
+[node name="Tembok Kanan" type="StaticBody2D" parent="Camera2D"]
+position = Vector2( -128, -128 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Tembok Kanan"]
+position = Vector2( 264, 160 )
+scale = Vector2( 1, 1.22727 )
+shape = SubResource( 2 )
+
+[node name="Tembok Kiri" type="StaticBody2D" parent="Camera2D"]
+position = Vector2( -128, -128 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Tembok Kiri"]
+position = Vector2( -8, 160 )
+scale = Vector2( 1, 1.22727 )
+shape = SubResource( 2 )
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+
+[node name="Bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="StakSenjata" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kematian" parent="." instance=ExtResource( 16 )]
+position = Vector2( 168, 708 )
+scale = Vector2( 0.75, 0.375 )
+
+[node name="Pemuncul Musuh" parent="." instance=ExtResource( 17 )]
+position = Vector2( 136, 368 )
+indeks = "Laser"
+arg = 1
+
+[node name="Pemuncul Musuh4" parent="." instance=ExtResource( 17 )]
+position = Vector2( 720, 600 )
+indeks = "Yoku"
+
+[node name="Pemuncul Musuh2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 136, 608 )
+indeks = "Laser"
+arg = 2
+
+[node name="Pemuncul Musuh3" parent="." instance=ExtResource( 17 )]
+position = Vector2( 762, 921 )
+scale = Vector2( 0.150001, 0.187501 )
+indeks = "Laser"
+arg = 3
+
+[node name="Pemuncul Musuh5" parent="." instance=ExtResource( 17 )]
+position = Vector2( 128, 928 )
+indeks = "Laser"
+arg = 4
+
+[node name="Pemuncul Musuh6" parent="." instance=ExtResource( 17 )]
+position = Vector2( 648, 648 )
+indeks = "Laser"
+arg = 5
+
+[node name="Pemuncul Musuh7" parent="." instance=ExtResource( 17 )]
+position = Vector2( 648, 448 )
+indeks = "Laser"
+arg = 6
+
+[node name="Pemuncul Musuh8" parent="." instance=ExtResource( 17 )]
+position = Vector2( 912, 376 )
+indeks = "Laser"
+arg = 7
+
+[node name="Pemuncul Musuh9" parent="." instance=ExtResource( 17 )]
+position = Vector2( 879, 592 )
+indeks = "Laser"
+arg = 8
+
+[node name="Pemuncul Musuh10" parent="." instance=ExtResource( 17 )]
+position = Vector2( 912, 880 )
+indeks = "Laser"
+arg = 9
+
+[node name="Pemuncul Musuh11" parent="." instance=ExtResource( 17 )]
+position = Vector2( 968, 1168 )
+indeks = "Laser"
+arg = 10
+
+[node name="Pemuncul Musuh15" parent="." instance=ExtResource( 17 )]
+position = Vector2( 376, 1128 )
+indeks = "Laser"
+arg = 12
+
+[node name="Pemuncul Musuh14" parent="." instance=ExtResource( 17 )]
+position = Vector2( 624, 1120 )
+indeks = "Laser"
+arg = 11
+
+[node name="Pemuncul Musuh16" parent="." instance=ExtResource( 17 )]
+position = Vector2( 384, 1416 )
+indeks = "Laser"
+arg = 13
+
+[node name="Pemuncul Musuh17" parent="." instance=ExtResource( 17 )]
+position = Vector2( 632, 1416 )
+indeks = "Laser"
+arg = 14
+
+[node name="Pemuncul Musuh18" parent="." instance=ExtResource( 17 )]
+position = Vector2( 880, 1400 )
+indeks = "Laser"
+arg = 15
+
+[node name="Pemuncul Musuh19" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1168, 1416 )
+indeks = "Laser"
+arg = 16
+
+[node name="Pemuncul Musuh20" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1152, 1616 )
+indeks = "Laser"
+arg = 17
+
+[node name="Pemuncul Musuh21" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1144, 1904 )
+indeks = "Laser"
+arg = 18
+
+[node name="Pemuncul Musuh22" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1144, 2176 )
+indeks = "Laser"
+arg = 19
+
+[node name="Pemuncul Musuh12" parent="." instance=ExtResource( 17 )]
+position = Vector2( 656, 1152 )
+indeks = "Platform Bunga"
+arg = 9
+
+[node name="Pemuncul Musuh13" parent="." instance=ExtResource( 17 )]
+position = Vector2( 592, 1160 )
+indeks = "Platform Bunga"
+arg = 9
+
+[node name="Tangga" parent="." instance=ExtResource( 18 )]
+position = Vector2( 728, 800 )
+scale = Vector2( 0.25, 3 )
+
+[node name="Tangga3" parent="." instance=ExtResource( 18 )]
+position = Vector2( 536, 478 )
+scale = Vector2( 0.25, 3.5625 )
+
+[node name="Tangga5" parent="." instance=ExtResource( 18 )]
+position = Vector2( 984, 356 )
+scale = Vector2( 0.25, 1.125 )
+
+[node name="Tangga8" parent="." instance=ExtResource( 18 )]
+position = Vector2( 936, 506.5 )
+scale = Vector2( 0.25, 1.26563 )
+
+[node name="Tangga2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 728, 712 )
+
+[node name="Tangga4" parent="." instance=ExtResource( 19 )]
+position = Vector2( 536, 376 )
+
+[node name="Tangga6" parent="." instance=ExtResource( 19 )]
+position = Vector2( 984, 328 )
+
+[node name="Tangga7" parent="." instance=ExtResource( 19 )]
+position = Vector2( 936, 472 )
+
+[node name="Tembyut" parent="." instance=ExtResource( 20 )]
+position = Vector2( 840, 1488 )
+
+[node name="Tembyut2" parent="." instance=ExtResource( 20 )]
+position = Vector2( 872, 1488 )
+
+[node name="Tembyut3" parent="." instance=ExtResource( 20 )]
+position = Vector2( 952, 1488 )
+

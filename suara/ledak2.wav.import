@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ledak2.wav-53084262b31f086d6f726895a229b032.sample"
+
+[deps]
+
+source_file="res://suara/ledak2.wav"
+dest_files=[ "res://.import/ledak2.wav-53084262b31f086d6f726895a229b032.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

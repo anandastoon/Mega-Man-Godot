@@ -1,0 +1,20 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/boss-gimmick.tmx-6fe6b594f150b0c79c3d8b623a526c72.scn"
+
+[deps]
+
+source_file="res://boss-gimmick.tmx"
+dest_files=[ "res://.import/boss-gimmick.tmx-6fe6b594f150b0c79c3d8b623a526c72.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=0
+embed_internal_images=true
+save_tiled_properties=false
+post_import_script=""

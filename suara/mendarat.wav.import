@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/mendarat.wav-994e90fbf7fc3c2868b540d04590a144.sample"
+
+[deps]
+
+source_file="res://suara/mendarat.wav"
+dest_files=[ "res://.import/mendarat.wav-994e90fbf7fc3c2868b540d04590a144.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

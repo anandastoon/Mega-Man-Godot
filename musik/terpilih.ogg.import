@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/terpilih.ogg-12822a1e7b01ec5e18401063ed1f6d44.oggstr"
+
+[deps]
+
+source_file="res://musik/terpilih.ogg"
+dest_files=[ "res://.import/terpilih.ogg-12822a1e7b01ec5e18401063ed1f6d44.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

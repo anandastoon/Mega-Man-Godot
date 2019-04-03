@@ -1,0 +1,20 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/laserbattle_2.tmx-bdba73f031514acfee846c3ddaea6816.scn"
+
+[deps]
+
+source_file="res://laserbattle_2.tmx"
+dest_files=[ "res://.import/laserbattle_2.tmx-bdba73f031514acfee846c3ddaea6816.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=true
+image_flags=0
+embed_internal_images=true
+save_tiled_properties=false
+post_import_script=""

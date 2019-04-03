@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/menang.ogg-c3d1be8db9f7c9d1a2c4b9c809a03b37.oggstr"
+
+[deps]
+
+source_file="res://musik/menang.ogg"
+dest_files=[ "res://.import/menang.ogg-c3d1be8db9f7c9d1a2c4b9c809a03b37.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

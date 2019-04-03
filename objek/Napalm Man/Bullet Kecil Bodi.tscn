@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://skrip/Napalm Man/Bullet Kecil Bodi.gd" type="Script" id=1]
+[ext_resource path="res://sprite/Napalm Man/spr_napalmman_bullet1.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 3, 2 )
+
+[node name="Bullet Kecil Bodi" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 2
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+
+[node name="Sprite" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Animation", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
+
+shape = SubResource( 1 )
+
+[connection signal="area_exited" from="Area2D" to="." method="_on_Bullet_Kecil_area_exited"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Bullet_Kecil_body_entered"]
+
+

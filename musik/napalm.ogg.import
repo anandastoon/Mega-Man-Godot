@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/napalm.ogg-9abb41c393adec7708bd8d799392be5b.oggstr"
+
+[deps]
+
+source_file="res://musik/napalm.ogg"
+dest_files=[ "res://.import/napalm.ogg-9abb41c393adec7708bd8d799392be5b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

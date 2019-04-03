@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://skrip/Gimmick/Yoku Muncul.gd" type="Script" id=1]
+
+[node name="Yoku Muncul" type="Node2D"]
+
+script = ExtResource( 1 )
+_sections_unfolded = [ "Material", "Pause", "Transform", "Visibility", "Z Index" ]
+
+

@@ -1,0 +1,237 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://skrip/Level.gd" type="Script" id=1]
+[ext_resource path="res://addons/bg1.jpg" type="Texture" id=2]
+[ext_resource path="res://megageblek.tmx" type="PackedScene" id=3]
+[ext_resource path="res://objek/Mega Man/Megaman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objek/Tembok.tscn" type="PackedScene" id=5]
+[ext_resource path="res://objek/Kematian.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objek/Mega Man/Darah Meter.tscn" type="PackedScene" id=7]
+[ext_resource path="res://musik/wily.ogg" type="AudioStream" id=8]
+[ext_resource path="res://objek/Tangga.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objek/Tangga Atas.tscn" type="PackedScene" id=10]
+[ext_resource path="res://objek/Air.tscn" type="PackedScene" id=11]
+[ext_resource path="res://objek/Pemuncul Musuh.tscn" type="PackedScene" id=12]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 128, 42.2957 )
+
+[node name="Level" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." index="0"]
+
+layer = -1
+offset = Vector2( 1, 1 )
+rotation = 0.0
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 1, 1 )
+scroll_offset = Vector2( 128, 128 )
+scroll_base_offset = Vector2( 0, 0 )
+scroll_base_scale = Vector2( 1, 1 )
+scroll_limit_begin = Vector2( 0, 0 )
+scroll_limit_end = Vector2( 0, 0 )
+scroll_ignore_camera_zoom = true
+_sections_unfolded = [ "Scroll" ]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" index="0"]
+
+motion_scale = Vector2( 0.25, 0.25 )
+motion_offset = Vector2( 0, 0 )
+motion_mirroring = Vector2( 512, 512 )
+_sections_unfolded = [ "Motion", "Transform" ]
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer" index="0"]
+
+position = Vector2( 128, 128 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 512 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+
+[node name="Tiles" parent="." index="1" instance=ExtResource( 3 )]
+
+[node name="StakMusuh" type="Node2D" parent="." index="2"]
+
+[node name="Megaman" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 72, 128 )
+_sections_unfolded = [ "Collision", "Material", "Pause", "Pickable", "Transform", "Visibility", "Z", "Z Index", "collision" ]
+
+[node name="Tembok" parent="." index="4" instance=ExtResource( 5 )]
+
+visible = false
+position = Vector2( 96, 192 )
+
+[node name="Kematian" parent="." index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 440, 376 )
+scale = Vector2( 2.25, 0.25 )
+
+[node name="Kematian3" parent="." index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 672, 616 )
+scale = Vector2( 0.999999, 0.25 )
+
+[node name="Kematian4" parent="." index="7" instance=ExtResource( 6 )]
+
+position = Vector2( 744, 632 )
+scale = Vector2( 0.249999, 0.25 )
+
+[node name="Kematian5" parent="." index="8" instance=ExtResource( 6 )]
+
+position = Vector2( 352, 296 )
+scale = Vector2( 0.5, 0.25 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="9"]
+
+position = Vector2( 128, 128 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.5, 0.5 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Drag Margin", "Editor", "Limit", "Material", "Offset", "Transform", "Visibility", "Z Index" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Darah Meter" parent="Camera2D" index="0" instance=ExtResource( 7 )]
+
+position = Vector2( -104, -88 )
+
+[node name="Label" type="Label" parent="Camera2D" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 64.0
+margin_top = -112.0
+margin_right = 104.0
+margin_bottom = -98.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Layar:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="AreaKamera" type="Area2D" parent="Camera2D" index="2"]
+
+visible = false
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/AreaKamera" index="0"]
+
+scale = Vector2( 1, 3.02632 )
+shape = SubResource( 1 )
+
+[node name="Sfx" type="AudioStreamPlayer" parent="." index="10"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Bgm" type="AudioStreamPlayer" parent="." index="11"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="Tangga5" parent="." index="12" instance=ExtResource( 9 )]
+
+position = Vector2( 184, 104 )
+scale = Vector2( 0.25, 1.125 )
+
+[node name="Tangga6" parent="." index="13" instance=ExtResource( 10 )]
+
+position = Vector2( 200, 200 )
+
+[node name="Tangga" parent="." index="14" instance=ExtResource( 9 )]
+
+position = Vector2( 200, 250 )
+scale = Vector2( 0.25, 1.6875 )
+
+[node name="Tangga3" parent="." index="15" instance=ExtResource( 10 )]
+
+position = Vector2( 184, 72 )
+
+[node name="Tangga2" parent="." index="16" instance=ExtResource( 9 )]
+
+position = Vector2( 728, 502 )
+scale = Vector2( 0.25, 2.0625 )
+
+[node name="Tangga4" parent="." index="17" instance=ExtResource( 10 )]
+
+position = Vector2( 728, 440 )
+
+[node name="Air" parent="." index="18" instance=ExtResource( 11 )]
+
+position = Vector2( 672, 680 )
+scale = Vector2( 2.5, 1.75 )
+
+[node name="StakSenjata" type="Node2D" parent="." index="19"]
+
+[node name="Pemuncul Musuh" parent="." index="20" instance=ExtResource( 12 )]
+
+position = Vector2( 120, 312 )
+indeks = "Laser"
+arg = 1
+
+[node name="Pemuncul Musuh5" parent="." index="21" instance=ExtResource( 12 )]
+
+position = Vector2( 760, 336 )
+indeks = "Laser"
+arg = 2
+
+[node name="Pemuncul Musuh2" parent="." index="22" instance=ExtResource( 12 )]
+
+position = Vector2( 152, 104 )
+indeks = "Lirik"
+
+[node name="Pemuncul Musuh3" parent="." index="23" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 368 )
+indeks = "Lirik"
+
+[node name="Pemuncul Musuh4" parent="." index="24" instance=ExtResource( 12 )]
+
+position = Vector2( 736, 368 )
+indeks = "Lirik"
+
+

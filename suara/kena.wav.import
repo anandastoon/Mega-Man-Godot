@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kena.wav-4af42ed69c97f552a0bd3cc69265a488.sample"
+
+[deps]
+
+source_file="res://suara/kena.wav"
+dest_files=[ "res://.import/kena.wav-4af42ed69c97f552a0bd3cc69265a488.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

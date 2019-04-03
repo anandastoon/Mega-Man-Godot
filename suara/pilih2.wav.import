@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/pilih2.wav-2e621543e1e12a208b6b2951a71f1910.sample"
+
+[deps]
+
+source_file="res://suara/pilih2.wav"
+dest_files=[ "res://.import/pilih2.wav-2e621543e1e12a208b6b2951a71f1910.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

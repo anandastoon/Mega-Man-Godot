@@ -1,0 +1,181 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://skrip/Level.gd" type="Script" id=1]
+[ext_resource path="res://addons/bg1.jpg" type="Texture" id=2]
+[ext_resource path="res://objek/Pintu Raja.tscn" type="PackedScene" id=3]
+[ext_resource path="res://boss.tmx" type="PackedScene" id=4]
+[ext_resource path="res://objek/Es.tscn" type="PackedScene" id=5]
+[ext_resource path="res://boss-gimmick.tmx" type="PackedScene" id=6]
+[ext_resource path="res://objek/Air Kompleks 1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objek/Gimmick/Laser Bias.tscn" type="PackedScene" id=8]
+[ext_resource path="res://objek/Mega Man/Megaman.tscn" type="PackedScene" id=9]
+[ext_resource path="res://objek/Napalm Man/Darah Meter Raja.tscn" type="PackedScene" id=10]
+[ext_resource path="res://skrip/Mega Man/Darah Meter.gd" type="Script" id=11]
+[ext_resource path="res://objek/Mega Man/Darah Meter.tscn" type="PackedScene" id=12]
+[ext_resource path="res://objek/Pemuncul Musuh.tscn" type="PackedScene" id=13]
+[ext_resource path="res://musik/napalm.ogg" type="AudioStream" id=14]
+[ext_resource path="res://musik/boss.ogg" type="AudioStream" id=15]
+[ext_resource path="res://musik/menang.ogg" type="AudioStream" id=16]
+[ext_resource path="res://objek/Kematian.tscn" type="PackedScene" id=17]
+[ext_resource path="res://objek/Tangga.tscn" type="PackedScene" id=18]
+[ext_resource path="res://objek/Tangga Atas.tscn" type="PackedScene" id=19]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 128, 42.2957 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 128 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2( 1, 1 )
+scale = Vector2( 2, 2 )
+transform = Transform2D( 2, 0, 0, 2, 1, 1 )
+scroll_offset = Vector2( 128, 128 )
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.25, 0.25 )
+motion_mirroring = Vector2( 512, 512 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 512, 512 )
+
+[node name="Pintu Raja" parent="." instance=ExtResource( 3 )]
+position = Vector2( 256, 144 )
+
+[node name="Pintu Raja2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 512, 144 )
+
+[node name="boss" parent="." instance=ExtResource( 4 )]
+
+[node name="Es" parent="boss" instance=ExtResource( 5 )]
+position = Vector2( 400, 184 )
+scale = Vector2( 4, 0.5 )
+
+[node name="Es2" parent="boss" instance=ExtResource( 5 )]
+position = Vector2( 384, 168 )
+scale = Vector2( 1, 0.5 )
+
+[node name="boss-gimmick" parent="." instance=ExtResource( 6 )]
+position = Vector2( 511.401, 0.598755 )
+
+[node name="StakLaser" type="Node2D" parent="."]
+
+[node name="StakMusuh" type="Node2D" parent="."]
+
+[node name="Es" parent="." instance=ExtResource( 5 )]
+position = Vector2( 752, 1172 )
+scale = Vector2( 2, 0.375 )
+
+[node name="Air" parent="." instance=ExtResource( 7 )]
+position = Vector2( 360, 1352 )
+
+[node name="Laser Bias" parent="." instance=ExtResource( 8 )]
+position = Vector2( 40, 840 )
+indeks_bias = "bawah"
+indeks_stop = 13
+
+[node name="Megaman" parent="." instance=ExtResource( 9 )]
+position = Vector2( 72, 128 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 128, 128 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Darah Meter Raja" parent="Camera2D" instance=ExtResource( 10 )]
+visible = false
+position = Vector2( 104, -88 )
+script = ExtResource( 11 )
+
+[node name="Darah Meter" parent="Camera2D" instance=ExtResource( 12 )]
+position = Vector2( -104, -88 )
+
+[node name="Label" type="Label" parent="Camera2D"]
+visible = false
+margin_left = 64.0
+margin_top = -112.0
+margin_right = 104.0
+margin_bottom = -98.0
+text = "Layar:"
+
+[node name="AreaKamera" type="Area2D" parent="Camera2D"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/AreaKamera"]
+scale = Vector2( 1, 3.02632 )
+shape = SubResource( 1 )
+
+[node name="Tembok Kanan" type="StaticBody2D" parent="Camera2D"]
+position = Vector2( -128, -128 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Tembok Kanan"]
+position = Vector2( 264, 160 )
+scale = Vector2( 1, 1.22727 )
+shape = SubResource( 2 )
+
+[node name="Tembok Kiri" type="StaticBody2D" parent="Camera2D"]
+position = Vector2( -128, -128 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Camera2D/Tembok Kiri"]
+position = Vector2( -8, 160 )
+scale = Vector2( 1, 1.22727 )
+shape = SubResource( 2 )
+
+[node name="Pemuncul Musuh2" parent="." instance=ExtResource( 13 )]
+position = Vector2( 664, 112 )
+indeks = "Raja"
+
+[node name="Pemuncul Musuh3" parent="." instance=ExtResource( 13 )]
+position = Vector2( 384, 120 )
+indeks = "Laser"
+arg = 20
+
+[node name="Sfx" type="AudioStreamPlayer" parent="."]
+volume_db = -17.42
+
+[node name="Bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="Bgm Raja" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="Bgm Menang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="StakSenjata" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Kematian" parent="." instance=ExtResource( 17 )]
+position = Vector2( 168, 708 )
+scale = Vector2( 0.75, 0.375 )
+
+[node name="Pemuncul Musuh" parent="." instance=ExtResource( 13 )]
+position = Vector2( 136, 368 )
+
+[node name="Pemuncul Musuh13" parent="." instance=ExtResource( 13 )]
+position = Vector2( 592, 1160 )
+
+[node name="Tangga" parent="." instance=ExtResource( 18 )]
+position = Vector2( 136, 116 )
+scale = Vector2( 0.25, 1.375 )
+
+[node name="Tangga2" parent="." instance=ExtResource( 19 )]
+position = Vector2( 352, 512 )
+

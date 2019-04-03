@@ -1,0 +1,20 @@
+[remap]
+
+importer="vnen.tiled_importer"
+type="PackedScene"
+path="res://.import/quickman maps.tmx-30b0b1cba4cd0ffb96aad1259815ae97.scn"
+
+[deps]
+
+source_file="res://quickman maps.tmx"
+dest_files=[ "res://.import/quickman maps.tmx-30b0b1cba4cd0ffb96aad1259815ae97.scn" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+uv_clip=false
+image_flags=8
+embed_internal_images=false
+save_tiled_properties=false
+post_import_script=""
