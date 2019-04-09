@@ -16,7 +16,6 @@ Currently, it features:
 * Quick Man laser - [Watch the video](https://www.youtube.com/watch?v=pqEXgDXJwOA)
 * Boss Battle - [Watch the video](https://www.youtube.com/watch?v=SGhZFG2Lb1A)
 
-
 ## IN
 
 Awalnya cuma iseng, tapi mau saya tinggal juga sayang.
@@ -28,5 +27,5 @@ Fiturnya:
 * Nembak, Lompat, Sliding di Mega Man
 * Pemuncul Musuh (yang kalo keluar kamera muncul lagi)
 * Es (ngebug :( )
-* Quick Man laser - [Watch the video](https://www.youtube.com/watch?v=pqEXgDXJwOA)
-* Raja - [Watch the video](https://www.youtube.com/watch?v=SGhZFG2Lb1A)
+* Quick Man laser - [Video](https://www.youtube.com/watch?v=pqEXgDXJwOA)
+* Raja - [Video](https://www.youtube.com/watch?v=SGhZFG2Lb1A)
