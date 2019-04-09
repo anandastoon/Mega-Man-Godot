@@ -16,10 +16,10 @@ Currently, it features:
 * Quick Man laser - [Watch the video](https://www.youtube.com/watch?v=pqEXgDXJwOA)
 * Boss Battle - [Watch the video](https://www.youtube.com/watch?v=SGhZFG2Lb1A)
 
-## IN
+## ID
 
 Awalnya cuma iseng, tapi mau saya tinggal juga sayang.
-Tapi serius, awalnya cuma pengen coba-coba Godot doang, kek gimana sih ya skripnya... Eh, keterusan. Parahnya, masih berantakan sumpah strukturnya.
+Tapi serius, awalnya cuma pengen coba-coba Godot doang, kek gimana sih ya skripnya... Eh, keterusan. Parahnya, masih berantakan sumpah strukturnya. :(
 
 Saya tidak pakai pihak ketiga untuk koding sama sekali, plugin pun hanya untuk impor tileset. Sudah.
 
